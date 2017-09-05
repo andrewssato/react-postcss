@@ -1,14 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import style from './style.css';
+import Button from '../../components/Button';
 
-class App extends Component {
-  render() {
-    return (
-      <div className={style.app}>
-          Test Postcss app
-      </div>
-    );
-  }
+const App = ({ theme }) => {
+  return (
+    <div className={theme.app}>
+        <Button />
+    </div>
+  );
+};
+
+App.defaultProps = {
+  theme: style,
 }
+
+App.propTypes = {
+  theme: PropTypes.shape({
+    app: PropTypes.string.isRequired,
+  })
+};
 
 export default App;

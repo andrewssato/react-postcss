@@ -1,14 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
 import renderer from 'react-test-renderer';
 import App from './..';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-});
+describe('#App', () => {
+  // to remove warnings
+  console.error = () => null;
 
-it('source de app sem propriedades', () => {
-  const tree = renderer.create(<App />).toJSON();
-  expect(tree).toMatchSnapshot();
+  // mock style postcss
+  const theme = {app: 'app'};
+
+  it('should render App component', () => {
+    const el = shallow(<App theme={theme} />);
+    expect(el.find('div')).toHaveLength(1);
+  });
+
+  it('Generate source of App without properties', () => {
+    const tree = renderer.create(<App theme={theme} />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

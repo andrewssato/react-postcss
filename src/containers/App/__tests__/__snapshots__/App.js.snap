@@ -1,9 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`source de app sem propriedades 1`] = `
+exports[`#App Generate source of App without properties 1`] = `
 <div
-  className={undefined}
+  className="app"
 >
-  Test Postcss app
+  <button
+    className={undefined}
+    type="button"
+  >
+    Button
+  </button>
 </div>
 `;

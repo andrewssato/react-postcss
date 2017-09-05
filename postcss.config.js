@@ -1,4 +1,1 @@
-module.exports = {
-  require('precss'),
-  require('autoprefixer')
-}
+module.exports = {}

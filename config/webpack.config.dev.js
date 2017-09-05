@@ -221,7 +221,7 @@ module.exports = {
                         browsers: ['> 3%', 'last 2 versions'],
                       }),
                       require('postcss-nested-ancestors'),
-                      require('postcss-nested'),
+                      require('postcss-nested')
                     ];
                   },
                 },
